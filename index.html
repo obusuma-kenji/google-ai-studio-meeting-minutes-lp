@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google AI Studioで劇的効率化！音声から最高品質の議事録を作成する完全ガイド</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'メイリオ', 'Meiryo', 'Hiragino Kaku Gothic ProN', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: white;
+            margin: 40px 0;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #4285f4;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #4285f4;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(66, 133, 244, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            color: #4285f4;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: #4285f4;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
+        }
+
+        .step h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .step::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #4285f4;
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .audio-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .audio-container audio {
+            width: 100%;
+        }
+
+        .audio-label {
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+
+        .comparison-table th {
+            background: #4285f4;
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .tips-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .tips-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .tips-box ul {
+            list-style: none;
+        }
+
+        .tips-box li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .tips-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #34a853;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #34a853 0%, #0f9d58 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .cta h2 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #34a853;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .security-note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        .security-note h4 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .steps {
+                flex-direction: column;
+            }
+
+            .step::after {
+                display: none;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Google AI Studioで劇的効率化！<br>音声ファイルから「最高品質」の議事録を作成する完全ガイド</h1>
+        <p>文字起こし不要。Gemini 1.5 Proが音声を直接理解して、プロ級の議事録を自動生成</p>
+        <div class="hero-image">
+            <img src="infographic.png" alt="Google AI Studio 議事録作成ガイド インフォグラフィック">
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 動画セクション -->
+        <div class="section">
+            <h2>📹 実践デモ動画</h2>
+            <div class="video-container">
+                <video controls poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect fill='%234285f4' width='800' height='450'/%3E%3Ctext fill='white' font-size='40' font-family='Arial' x='50%25' y='50%25' text-anchor='middle'%3EAI議事録活用術%3C/text%3E%3C/svg%3E">
+                    <source src="AIが書く議事録活用術.mp4" type="video/mp4">
+                    お使いのブラウザは動画タグをサポートしていません。
+                </video>
+            </div>
+            <p style="text-align: center; margin-top: 15px;">
+                <a href="AIが書く議事録活用術.mp4" download style="color: #4285f4; text-decoration: none; font-weight: bold;">
+                    📥 動画をダウンロード
+                </a>
+            </p>
+            <p style="text-align: center; margin-top: 20px; color: #666;">
+                実際の操作画面を見ながら、Google AI Studioでの議事録作成方法を学べます
+            </p>
+        </div>
+
+        <!-- 音声解説セクション -->
+        <div class="section">
+            <h2>🎧 音声で学ぶ！使い方ガイド</h2>
+            <div class="audio-container">
+                <div class="audio-label">📻 Google AI Studioで文字起こしせず議事録を作る方法</div>
+                <audio controls>
+                    <source src="Google_AI_Studioで文字起こしせず議事録を作る.m4a" type="audio/mp4">
+                    お使いのブラウザは音声タグをサポートしていません。
+                </audio>
+            </div>
+            <p style="text-align: center; margin-top: 15px;">
+                <a href="Google_AI_Studioで文字起こしせず議事録を作る.m4a" download style="color: white; text-decoration: none; font-weight: bold;">
+                    📥 音声ファイルをダウンロード
+                </a>
+            </p>
+            <p style="text-align: center; margin-top: 20px; color: #666;">
+                移動中やスキマ時間に、音声で効率的に学習できます
+            </p>
+        </div>
+
+        <!-- なぜGoogle AI Studioなのか -->
+        <div class="section">
+            <h2>なぜ、専用ツールではなくGoogle AI Studioなのか？</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px;">
+                一般的な文字起こしツール（NottaやCLOVA Noteなど）と比較して、<br>
+                Google AI Studioは<strong>「文脈の理解力」</strong>と<strong>「要約の質」</strong>において勝る部分が多い、<strong>「非常に賢い選択」</strong>です。
+            </p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+                <div style="text-align: center;">
+                    <h3 style="color: #999; margin-bottom: 20px;">従来の方法</h3>
+                    <div style="background: #f8f9fa; padding: 30px; border-radius: 10px;">
+                        <p style="font-size: 3rem; margin-bottom: 20px;">🎤</p>
+                        <p style="margin-bottom: 10px;">↓</p>
+                        <p style="font-size: 2rem; margin-bottom: 20px;">📝</p>
+                        <p style="margin-bottom: 10px;">↓</p>
+                        <p style="font-size: 2rem; margin-bottom: 20px;">✏️</p>
+                        <p style="color: #666; margin-top: 20px;">
+                            音声 → テキスト化 → 人間が編集<br>
+                            <strong>3ステップで時間がかかる</strong>
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <h3 style="color: #4285f4; margin-bottom: 20px;">新しいアプローチ</h3>
+                    <div style="background: linear-gradient(135deg, #e8f4fd 0%, #d0e9ff 100%); padding: 30px; border-radius: 10px;">
+                        <p style="font-size: 3rem; margin-bottom: 20px;">🎤</p>
+                        <p style="margin-bottom: 10px;">↓</p>
+                        <p style="font-size: 2rem; margin-bottom: 20px;">🤖✨</p>
+                        <p style="margin-bottom: 10px;">↓</p>
+                        <p style="font-size: 2rem; margin-bottom: 20px;">💡📋</p>
+                        <p style="color: #333; margin-top: 20px;">
+                            音声 → <strong>AIが直接理解</strong> → 洞察/要約<br>
+                            <strong>即座に完成形へ</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4つのメリット -->
+        <div class="section">
+            <h2>Google AI Studioを選ぶ4つのメリット</h2>
+            <div class="benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>直接音声読み込み</h3>
+                    <p>テキスト化の工程を飛ばし、AIが音声を直接聴いて理解します。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⏰</div>
+                    <h3>長時間の会議も余裕</h3>
+                    <p>Gemini 1.5 Proの長いコンテキストにより、2時間以上・声も一度に処理可能。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔓</div>
+                    <h3>強力な無料枠</h3>
+                    <p>最新モデルを一定の制限内で無料利用できます。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔍</div>
+                    <h3>優秀な要約能力</h3>
+                    <p>単なる記録ではなく、「発言の意図」まで踏み込んだ深い分析が可能です。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 作成フロー -->
+        <div class="section">
+            <h2>作成フロー：わずか4ステップで完了</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>サイトにアクセス</h3>
+                    <p>Google AI Studioにログイン</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>モデル選択</h3>
+                    <p>Gemini 1.5 Proを選択</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>音声読み込み</h3>
+                    <p>MP3, WAV, AACなどをアップロード</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>プロンプト入力</h3>
+                    <p>議事録作成の指示を実行</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- プロンプト例 -->
+        <div class="section">
+            <h2>💬 実際に使えるプロンプト例</h2>
+            <div style="background: #f8f9fa; padding: 30px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; line-height: 1.6;">添付した音声ファイルを解析して、以下の項目で議事録を作成してください。
+✱ 会議の目的
+✱ 決定事項
+✱ 各発言者の主な意見（話者を特定してまとめてください）
+✱ ネクストアクション（誰が・いつまでに・何を）
+もし聞き取りにくい部分があれば、その旨も記載してください。</div>
+            
+            <div class="tips-box" style="margin-top: 30px;">
+                <h3>📌 Tips: 話者の特定精度を上げるコツ</h3>
+                <ul>
+                    <li>「声の特徴や文脈から、Aさん、Bさんという形で書き分けてください」と指示する</li>
+                    <li>この一言を加えるだけで、分類精度が劇的に向上します</li>
+                </ul>
+            </div>
+
+            <div class="tips-box">
+                <h3>⚡ Tips: 長尺ファイルを扱う場合</h3>
+                <ul>
+                    <li>2時間を超えるような非常に長いファイルの場合の戦略</li>
+                    <li>いきなり「全文書き出し」を求めず、まずは要約から始めるとエラーが減ります</li>
+                    <li>その後に深掘り質問をすることで、詳細な議事録を作成できます</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 出力される議事録の構成要素 -->
+        <div class="section">
+            <h2>📋 出力される議事録の構成要素</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div>
+                    <h3 style="color: #4285f4; margin-bottom: 20px;">含まれる項目</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 10px; background: #f8f9fa; margin-bottom: 10px; border-left: 4px solid #4285f4;">
+                            <strong>会議の目的:</strong> 何のための時間だったかを明確化
+                        </li>
+                        <li style="padding: 10px; background: #f8f9fa; margin-bottom: 10px; border-left: 4px solid #34a853;">
+                            <strong>決定事項:</strong> 最終的な合意事項を抽出
+                        </li>
+                        <li style="padding: 10px; background: #f8f9fa; margin-bottom: 10px; border-left: 4px solid #fbbc04;">
+                            <strong>意見の集約:</strong> 誰が何を言ったか、話者を特定して要約
+                        </li>
+                        <li style="padding: 10px; background: #f8f9fa; margin-bottom: 10px; border-left: 4px solid #ea4335;">
+                            <strong>ネクストアクション:</strong> 具体的なタスク (Who/When/What) を洗い出し
+                        </li>
+                    </ul>
+                </div>
+                <div style="background: #e8f4fd; padding: 30px; border-radius: 10px;">
+                    <h4 style="color: #4285f4; margin-bottom: 15px;">議事録サンプル</h4>
+                    <div style="background: white; padding: 20px; border-radius: 5px; font-size: 0.9rem;">
+                        <p style="margin-bottom: 10px;"><strong>会議の目的</strong></p>
+                        <p style="color: #666; margin-bottom: 20px;">新規プロジェクトのキックオフ</p>
+                        
+                        <p style="margin-bottom: 10px;"><strong>決定事項</strong></p>
+                        <ul style="color: #666; margin-bottom: 20px;">
+                            <li>予算は500万円で承認</li>
+                            <li>納期は3月末</li>
+                        </ul>
+                        
+                        <p style="margin-bottom: 10px;"><strong>意見の集約</strong></p>
+                        <p style="color: #666; margin-bottom: 5px;"><strong>Aさん:</strong> デザイン重視の提案</p>
+                        <p style="color: #666; margin-bottom: 20px;"><strong>Bさん:</strong> コスト削減の重要性を指摘</p>
+                        
+                        <p style="margin-bottom: 10px;"><strong>ネクストアクション</strong></p>
+                        <table style="width: 100%; font-size: 0.85rem;">
+                            <tr style="background: #f8f9fa;">
+                                <th style="padding: 5px;">Who</th>
+                                <th style="padding: 5px;">When</th>
+                                <th style="padding: 5px;">What</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 5px; color: #666;">Aさん</td>
+                                <td style="padding: 5px; color: #666;">来週</td>
+                                <td style="padding: 5px; color: #666;">デザイン案提出</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ツール使い分けガイド -->
+        <div class="section">
+            <h2>🔧 ツール使い分けの判断基準</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>Google AI Studio (Gemini)</th>
+                    <th>CLOVA Note / Notta</th>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>最適な用途:</strong> サクッと質の高い要約や議事録を作りたい<br><br>
+                        <strong>特徴:</strong> 圧倒的に賢いまとめ、文脈理解
+                    </td>
+                    <td>
+                        <strong>最適な用途:</strong> とにかく正確な一言一句のログ（テキスト）が欲しい<br><br>
+                        <strong>特徴:</strong> 再生同期UI、文字起こし専用機能
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- プライバシーとセキュリティ -->
+        <div class="section">
+            <h2>🔐 プライバシーとデータセキュリティ</h2>
+            <div class="security-note">
+                <h4>⚠️ APIデータの扱い</h4>
+                <p>Google AI Studio（API経由）で入力したデータは、基本的に学習には使われない設定になっています。</p>
+            </div>
+            <div class="security-note">
+                <h4>💡 推奨アクション</h4>
+                <p>会社の機密情報を扱う場合は、念のため組織のポリシーを確認してください。</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>その精度を、実際に体験してください</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">
+                お手持ちの音声ファイルをアップロードして試してみてください。<br>
+                AIが「聴いて、理解する」精度の高さに、きっと驚くはずです。
+            </p>
+            <a href="https://aistudio.google.com" class="cta-button" target="_blank">
+                今すぐGoogle AI Studioを試す →
+            </a>
+        </div>
+
+        <!-- まとめ -->
+        <div class="section">
+            <h2>✨ まとめ</h2>
+            <div style="background: #f8f9fa; padding: 30px; border-radius: 10px;">
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="padding: 15px; margin-bottom: 10px; background: white; border-left: 5px solid #4285f4; border-radius: 5px;">
+                        ✅ <strong>音声を直接アップロード</strong>して、テキスト化の手間を省く
+                    </li>
+                    <li style="padding: 15px; margin-bottom: 10px; background: white; border-left: 5px solid #34a853; border-radius: 5px;">
+                        ✅ <strong>Gemini 1.5 Proの長いコンテキスト</strong>で、2時間超の会議も一度に処理
+                    </li>
+                    <li style="padding: 15px; margin-bottom: 10px; background: white; border-left: 5px solid #fbbc04; border-radius: 5px;">
+                        ✅ <strong>プロンプト次第で話者分離</strong>や詳細な要約も実現
+                    </li>
+                    <li style="padding: 15px; margin-bottom: 10px; background: white; border-left: 5px solid #ea4335; border-radius: 5px;">
+                        ✅ <strong>無料枠の範囲内</strong>でも十分高性能
+                    </li>
+                    <li style="padding: 15px; background: white; border-left: 5px solid #9e9e9e; border-radius: 5px;">
+                        ✅ <strong>専用ツールとの使い分け</strong>で、状況に応じた最適な議事録作成が可能
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ダウンロード資料 -->
+        <div class="section">
+            <h2>📚 ダウンロード資料</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">📄</div>
+                    <h3 style="margin-bottom: 15px; font-size: 1.3rem;">完全ガイドPDF</h3>
+                    <p style="margin-bottom: 25px; opacity: 0.9;">13ページの詳細ガイド<br>印刷して手元に置いておける</p>
+                    <a href="AI_Meeting_Minutes_Guide.pdf" download style="display: inline-block; background: white; color: #667eea; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: transform 0.3s ease;">
+                        PDFをダウンロード
+                    </a>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">📊</div>
+                    <h3 style="margin-bottom: 15px; font-size: 1.3rem;">ツール比較表</h3>
+                    <p style="margin-bottom: 25px; opacity: 0.9;">Google AI Studio vs 他ツール<br>詳細な比較と活用法</p>
+                    <a href="Google_AI_Studioと他ツールの比較および活用法.xlsx" download style="display: inline-block; background: white; color: #f5576c; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: transform 0.3s ease;">
+                        Excelをダウンロード
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 成果を最大化するコツと注意点（PDFビジュアル） -->
+        <div class="section" style="background: linear-gradient(135deg, #e8f4fd 0%, #d0e9ff 100%);">
+            <h2 style="color: #333;">💡 成果を最大化するコツと注意点</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-top: 40px;">
+                <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <h3 style="color: #4285f4; margin-bottom: 20px; font-size: 1.3rem;">✨ 話者分離をプロンプトで指示</h3>
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                        <p style="font-weight: bold; margin-bottom: 10px;">追加プロンプト：</p>
+                        <p style="font-family: monospace; background: white; padding: 15px; border-radius: 5px; border-left: 4px solid #4285f4;">
+                            「声の特徴や文脈から、Aさん、Bさんという形で書き分けてください」
+                        </p>
+                    </div>
+                    <p style="color: #666;">
+                        この一言を加えるだけで、分類精度が劇的に向上します。専用ツールほど自動的な話者分離機能はありませんが、プロンプトで解決可能です。
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <h3 style="color: #34a853; margin-bottom: 20px; font-size: 1.3rem;">🔐 プライバシーとポリシーの確認</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                            <strong>APIデータの扱い：</strong> Google AI Studio（API経由）で入力したデータは、基本的に学習には使われない設定
+                        </li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid #f0f0f0;">
+                            <strong>推奨アクション：</strong> 会社の機密情報を扱う場合は、組織のポリシーを確認
+                        </li>
+                        <li style="padding: 10px 0;">
+                            <strong>ゼロデータ保持：</strong> 有料版を利用することで、さらに厳格な確認ルールも適用可能
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <h3 style="color: #fbbc04; margin-bottom: 20px; font-size: 1.3rem;">📁 長尺ファイルは要約に集中</h3>
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">🎵</div>
+                        <div style="color: #999; margin-bottom: 5px;">↓</div>
+                        <div style="background: #fff3cd; padding: 15px; border-radius: 10px; margin-bottom: 5px;">
+                            <strong>まず要約を指示</strong>
+                        </div>
+                        <div style="color: #999; margin-bottom: 5px;">↓</div>
+                        <div style="background: #d4edda; padding: 15px; border-radius: 10px;">
+                            <strong>その後に深掘り質問</strong>
+                        </div>
+                    </div>
+                    <p style="color: #666;">
+                        2時間を超える場合は、全文書き出しよりも「重要ポイントのまとめ」を依頼する方がエラーが少なく精確に仕上がります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background: #333; color: white; padding: 40px 20px; text-align: center;">
+        <p>© 2025 AI議事録作成ガイド | Google AI Studioを活用した効率的な議事録作成を支援します</p>
+        <p style="margin-top: 10px; font-size: 0.9rem; color: #999;">
+            NotebookLM Powered | Created by Obusuma Social Insurance Labor Office
+        </p>
+    </div>
+</body>
+</html>
